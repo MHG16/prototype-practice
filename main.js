@@ -3,9 +3,15 @@
 
 // write your code here
 
+String.prototype.shout = function () {
+	return this.toUpperCase() + '!!!!!';
+}
+
+
+
 console.assert('I like unicorns'.shout() === 'I LIKE UNICORNS!!!!!', 'expected to really like unicorns')
 console.assert('Aaron likes nutella'.shout() === 'AARON LIKES NUTELLA!!!!!', 'expected to aaron to really like nutell')
-console.assert('Prototypes make sharing easy'.shout() === 'PROTOTYPES MAKE SHARING EASY', 'expected prototypes to share really well')
+console.assert('Prototypes make sharing easy'.shout() === 'PROTOTYPES MAKE SHARING EASY!!!!!', 'expected prototypes to share really well')
 
 // 2. Overwrite the 'toString' method on all objects so that it returns keys
 // and values on that object.
@@ -14,6 +20,15 @@ var aSimpleObject = {color: 'pink', number: 57}
 var aUnicorn = {color: 'irridescent', hornType: 'rainbow', age: 23926094 }
 console.assert(aSimpleObject.toString() === 'color: pink, number: 57');
 console.assert(aUnicorn.toString() === 'color: irridescent, hornType: rainbow, age: 23926094');
+
+Object.prototype.toString = function () {
+	
+}
+
+
+
+
+
 
 // 3. Write a constructor that allows you to create Characters for a fictional
 // video game. Each character should have a name, a health (number), and a

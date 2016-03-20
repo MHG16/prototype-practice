@@ -22,11 +22,11 @@ console.assert(aSimpleObject.toString() === 'color: pink, number: 57');
 console.assert(aUnicorn.toString() === 'color: irridescent, hornType: rainbow, age: 23926094');
 
 Object.prototype.toString = function () {
-	
+
+	return Object.keys(this);
 }
 
-
-
+console.log(aSimpleObject.toString());
 
 
 
@@ -34,20 +34,55 @@ Object.prototype.toString = function () {
 // video game. Each character should have a name, a health (number), and a
 // special skill (string).
 
+function CreateCharacter() {
+	this.name = '';
+	this.health = 10;
+	this.specialSkill = '';
+}
+
+
 // 4. Add a method to your Character prototype that enables the created
 // characters to heal themselves (aka, their health value goes up)
+
+CreatedCharacter.prototype.heal = function() {
+	return health += 10;  
+}
+
 
 // 5. Add a method to your Character prototype that enables the created
 // characters to attack another character. The method should accept one
 // argument, which should be a created character. It should decrease the health
 // number of that other character. 
 
+CreatedCharacter.prototype.attack= function(CreatedCharacter) {
+			this.health = this.health - 1;
+}
+
+
+
+
 // 6. Create a constructor that creates a Super Character. It should inherit
 // all the properties of a normal character, and should be able to use all
 // methods on the Character prototype
+
+function SuperCharacter() {
+	CreatedCharacter.call(this);
+}
+
 
 // 7. Add a method to the Super Character prototype that allows it to destroy
 // another character in one fell swoop. It should accept one argument (a
 // character) and reduce their health to zero, no matter what their health was
 // going in. This method SHOULD NOT be available for normal characters, only
 // super characters.
+
+// define a function that all cats should be able to do.  
+SuperCharacter.prototype.destroy = function(CreatedCharacter) {
+  return CreatedCharacter.health = 0;
+}
+
+
+
+
+
+

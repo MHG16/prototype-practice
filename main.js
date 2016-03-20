@@ -16,17 +16,22 @@ console.assert('Prototypes make sharing easy'.shout() === 'PROTOTYPES MAKE SHARI
 // 2. Overwrite the 'toString' method on all objects so that it returns keys
 // and values on that object.
 
+Object.prototype.toString = function() {
+  var obj = this;
+  var keyMap = Object.keys(obj);
+  console.log(keyMap);
+  var keyAndValue = keyMap.map(function(key) {
+    return key + ': ' + obj[key];
+  });
+  console.log(keyAndValue.join(', '));
+  return keyAndValue.join(', ');
+}
+
+
 var aSimpleObject = {color: 'pink', number: 57}
 var aUnicorn = {color: 'irridescent', hornType: 'rainbow', age: 23926094 }
 console.assert(aSimpleObject.toString() === 'color: pink, number: 57');
 console.assert(aUnicorn.toString() === 'color: irridescent, hornType: rainbow, age: 23926094');
-
-Object.prototype.toString = function () {
-
-	return Object.keys(this);
-}
-
-console.log(aSimpleObject.toString());
 
 
 
@@ -34,7 +39,7 @@ console.log(aSimpleObject.toString());
 // video game. Each character should have a name, a health (number), and a
 // special skill (string).
 
-function CreateCharacter() {
+function CreatedCharacter() {
 	this.name = '';
 	this.health = 10;
 	this.specialSkill = '';

@@ -75,8 +75,7 @@ function SuperCharacter() {
 // character) and reduce their health to zero, no matter what their health was
 // going in. This method SHOULD NOT be available for normal characters, only
 // super characters.
-
-// define a function that all cats should be able to do.  
+ 
 SuperCharacter.prototype.destroy = function(CreatedCharacter) {
   return CreatedCharacter.health = 0;
 }

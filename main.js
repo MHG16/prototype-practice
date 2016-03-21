@@ -19,7 +19,7 @@ console.assert('Prototypes make sharing easy'.shout() === 'PROTOTYPES MAKE SHARI
 Object.prototype.toString = function() {
   var obj = this;
   var keyMap = Object.keys(obj);
-  console.log(keyMap);
+  //console.log(keyMap);
   var keyAndValue = keyMap.map(function(key) {
     return key + ': ' + obj[key];
   });
